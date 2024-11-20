@@ -6,6 +6,17 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -53,6 +64,19 @@
 					}
 				],
 				"name": "BookBatchRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "bookId",
+						"type": "uint256"
+					}
+				],
+				"name": "BookMarkedAsBestSeller",
 				"type": "event"
 			},
 			{
@@ -124,6 +148,25 @@
 				"name": "addBook",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "bestseller",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -286,6 +329,38 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "bookId",
+						"type": "uint256"
+					}
+				],
+				"name": "isBestSeller",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "bookId",
+						"type": "uint256"
+					}
+				],
+				"name": "markBookAsBestSeller",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "owner",
 				"outputs": [
@@ -353,11 +428,11 @@
 	},
 	"sources": {
 		"contracts/AdvancedBookstore.sol": {
-			"keccak256": "0x713b2b0386edb7c7f5045029b0864a01282b6baca6d00128d9f0e4906a38bb93",
+			"keccak256": "0xe3d602e6957f08df6f3ab5dd84a087ae6eeba6c8dbd57acce4127c0e53f31c43",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1086e2ddc361d513026dc3b8d8c7508d60bc400b89209ef3589cca7bf5f2d099",
-				"dweb:/ipfs/QmcjtXaw83K15b4ZdDNZC7zmQccUqHku4AvUULK1cKCMH5"
+				"bzz-raw://8d6f0277ceb3d90919a9039ea799ae546c45453e58345857efd72d01f08f08d8",
+				"dweb:/ipfs/QmdgA1LtcUB63LdZacyxNRsYYUJ7KNo1dgfWFvrohQMG5k"
 			]
 		},
 		"contracts/Bookstore.sol": {

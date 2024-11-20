@@ -1,14 +1,13 @@
-// SPDX-License-Identifier: GPL-3.0
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.26;
 
-contract BookStore {
-    address public owner;
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract BookStore  is Ownable {
     uint256 private totalBooksSold;
 
-    constructor() {
-        owner = msg.sender;
-    }
+    constructor() Ownable (msg.sender) {}
 
     struct Book {
         string title;
@@ -27,10 +26,6 @@ contract BookStore {
     event BookRemoved(uint256 indexed bookId);
     event BookBatchRemoved(uint256[] bookIds);
 
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Only owner can perform this action");
-        _;
-    }
 
     function addBook(uint256 _bookId, string memory _title, string memory _author, uint256 _stock, uint16 _price) public {
         require(books[_bookId].price == 0, "CANNOT ADD BOOK IT ALREADY EXISTS");
@@ -87,7 +82,7 @@ contract BookStore {
 
     // 4. Check owner balance
     function getOwnerBalance() public view returns (uint256) {
-        return address(owner).balance;
+        return address(owner()).balance;
     }
 
     // 5. Get total number of books sold
@@ -116,7 +111,7 @@ contract BookStore {
         totalBooksSold += _quantity;
         
         // Transfer payment to the owner
-        payable(owner).transfer(msg.value);
+        payable(owner()).transfer(msg.value);
         emit BookPurchased(_bookId, msg.sender, _quantity);
     }
 }

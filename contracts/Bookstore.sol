@@ -95,7 +95,7 @@ contract BookStore  is Ownable {
         return (book.title, book.author, book.price, book.stock, book.isAvailable);
     }
 
-    function buyBook(uint256 _bookId, uint256 _quantity, uint256 _amount) public payable {
+    function buyBook(uint256 _bookId, uint256 _quantity, uint256 _amount) public virtual  payable {
         Book storage book = books[_bookId];
         require(book.isAvailable, "This book is not available");
         require(book.stock >= _quantity, "Not enough stock available");

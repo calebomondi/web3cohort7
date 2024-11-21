@@ -9,17 +9,6 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_owner",
-						"type": "address"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
 						"name": "owner",
 						"type": "address"
 					}
@@ -86,19 +75,6 @@
 					}
 				],
 				"name": "BookBatchRemoved",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "uint256",
-						"name": "bookId",
-						"type": "uint256"
-					}
-				],
-				"name": "BookMarkedAsBestSeller",
 				"type": "event"
 			},
 			{
@@ -189,25 +165,6 @@
 				"name": "addBook",
 				"outputs": [],
 				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "bestseller",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -370,38 +327,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "bookId",
-						"type": "uint256"
-					}
-				],
-				"name": "isBestSeller",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "bookId",
-						"type": "uint256"
-					}
-				],
-				"name": "markBookAsBestSeller",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
 				"inputs": [],
 				"name": "owner",
 				"outputs": [
@@ -496,7 +421,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/AdvancedBookstore.sol": "AdvancedBookstore"
+			"contracts/LoyaltyProgram.sol": "CustomerPoint"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -526,20 +451,20 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"contracts/AdvancedBookstore.sol": {
-			"keccak256": "0xfe8e4bee84d9f1ab571b364271b8cca949f706a33d80aac7b8843ac550119f88",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://b99bb65f27aabaed781c5dfa051aeaa430a76b60a86ba652305a3c3ff55ac7bf",
-				"dweb:/ipfs/Qmc3HDbfwptyq4pruLa9g1eKDULJ2nKSFZ91XQ5BEuiRhr"
-			]
-		},
 		"contracts/Bookstore.sol": {
 			"keccak256": "0xa9f73e6012a57e33c69d26d2c7ca86d0cd2a52b5c1c9e1bfa742db71db642b6b",
 			"license": "MIT",
 			"urls": [
 				"bzz-raw://912ff86a7c9f455f0b85e97579a30fe9fa5ea6d8e10e9863a875962269488e19",
 				"dweb:/ipfs/QmYJrKdELwpZD9uDgwmoE68vDoKzTYn21Rx4MAE89opVK3"
+			]
+		},
+		"contracts/LoyaltyProgram.sol": {
+			"keccak256": "0x587e45895d6a175d875f9e54c6585e15c7b9afbdc1de20a3e143ccddc5472a0e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a780aad1b8cc1b255236b52338b573f82996e2deddad83518e1b8301f0e84d01",
+				"dweb:/ipfs/Qmb5ryvSQKyyzvUQZjfeUYMNSWt66UHvHKUeeqxAuPp1cj"
 			]
 		}
 	},

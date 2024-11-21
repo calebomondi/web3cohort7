@@ -378,6 +378,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "totalBooksSold",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -457,11 +470,11 @@
 			]
 		},
 		"contracts/Bookstore.sol": {
-			"keccak256": "0xe759fd7abed351ba26d26173ae9861b2d5ed694a8edbefb9a4adbe49091febf4",
+			"keccak256": "0x2abd9dddb56112ac3a7ef246524e7c19cbbb6ed05ac21608ac3457739bd67b89",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8a9d18b0d72b64e0e3e62a56e4ada99d368d69c9ae203d37e6a05c2a7b649671",
-				"dweb:/ipfs/QmYFesV7pfQbaVX6iX4CFXAX3iZ9qr3CrPJbm74SDvTqig"
+				"bzz-raw://4574f5a50d686bbaeca265b3a4fc3e32e18016c004c47da84b8ab1f63c28dc38",
+				"dweb:/ipfs/QmVmTvgbNCLScLsAXBsoET6P5UDZQoM1rd6xn7gWdvBUhd"
 			]
 		}
 	},

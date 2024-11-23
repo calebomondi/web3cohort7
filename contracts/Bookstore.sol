@@ -3,6 +3,7 @@
 pragma solidity ^0.8.26;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "hardhat/console.sol";
 
 contract BookStore  is Ownable {
     uint256 private totalBooksSold;
@@ -10,11 +11,11 @@ contract BookStore  is Ownable {
     constructor() Ownable (msg.sender) {}
 
     struct Book {
+        uint256 stock;
+        uint256 price;
+        bool isAvailable;
         string title;
         string author;
-        uint16 price;
-        uint256 stock;
-        bool isAvailable;
     }
 
     //mapping using bookId to the book
@@ -27,14 +28,14 @@ contract BookStore  is Ownable {
     event BookBatchRemoved(uint256[] bookIds);
 
 
-    function addBook(uint256 _bookId, string memory _title, string memory _author, uint256 _stock, uint16 _price) public {
+    function addBook(uint256 _bookId, string memory _title, string memory _author, uint256 _stock, uint256 _price) public {
         require(books[_bookId].price == 0, "CANNOT ADD BOOK IT ALREADY EXISTS");
         books[_bookId] = Book({
-            title: _title,
-            author: _author,
-            price: _price,
             stock: _stock,
-            isAvailable: _stock > 0
+            price: _price,
+            isAvailable: _stock > 0,
+            title: _title,
+            author: _author
         });
         bookIds.push(_bookId);
         emit BookAdded(_bookId, _title, _author, _stock, _price);
@@ -95,11 +96,12 @@ contract BookStore  is Ownable {
         return (book.title, book.author, book.price, book.stock, book.isAvailable);
     }
 
-    function buyBook(uint256 _bookId, uint256 _quantity, uint256 _amount) public virtual  payable {
+    function buyBook(uint256 _bookId, uint256 _quantity) public  payable {
         Book storage book = books[_bookId];
         require(book.isAvailable, "This book is not available");
         require(book.stock >= _quantity, "Not enough stock available");
-        require(_amount == book.price * _quantity, "Incorrect payment amount");
+        console.log(msg.value);
+        require(msg.value == book.price * _quantity, "Incorrect payment amount");
         
         // Decrease stock and update availability
         book.stock -= _quantity;

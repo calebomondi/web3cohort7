@@ -162,9 +162,9 @@
 						"type": "uint256"
 					},
 					{
-						"internalType": "uint16",
+						"internalType": "uint256",
 						"name": "_price",
-						"type": "uint16"
+						"type": "uint256"
 					}
 				],
 				"name": "addBook",
@@ -202,6 +202,21 @@
 				"name": "books",
 				"outputs": [
 					{
+						"internalType": "uint256",
+						"name": "stock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isAvailable",
+						"type": "bool"
+					},
+					{
 						"internalType": "string",
 						"name": "title",
 						"type": "string"
@@ -210,21 +225,6 @@
 						"internalType": "string",
 						"name": "author",
 						"type": "string"
-					},
-					{
-						"internalType": "uint16",
-						"name": "price",
-						"type": "uint16"
-					},
-					{
-						"internalType": "uint256",
-						"name": "stock",
-						"type": "uint256"
-					},
-					{
-						"internalType": "bool",
-						"name": "isAvailable",
-						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -240,11 +240,6 @@
 					{
 						"internalType": "uint256",
 						"name": "_quantity",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_amount",
 						"type": "uint256"
 					}
 				],
@@ -378,19 +373,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "totalBooksSold",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -470,11 +452,19 @@
 			]
 		},
 		"contracts/Bookstore.sol": {
-			"keccak256": "0x2abd9dddb56112ac3a7ef246524e7c19cbbb6ed05ac21608ac3457739bd67b89",
+			"keccak256": "0x4a7de9b9ffbf9983081ae52db0ffcac145191e1f5bc739d6ee4270ed7db1e89e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4574f5a50d686bbaeca265b3a4fc3e32e18016c004c47da84b8ab1f63c28dc38",
-				"dweb:/ipfs/QmVmTvgbNCLScLsAXBsoET6P5UDZQoM1rd6xn7gWdvBUhd"
+				"bzz-raw://a926fd9d41723b3866a95be817b2b6c9554301925da25a96b13925ca69d18ca9",
+				"dweb:/ipfs/QmQ5cw9imJCG37F3ubagpaPg5d2utiSkc6HZNQ5z5PiQL9"
+			]
+		},
+		"hardhat/console.sol": {
+			"keccak256": "0xf2560b5386574153057104d19a9e68a32ee912cf23c0c8df1fe9a0607f42d543",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a63166e036b040826baa513772451a79925daa304b38749100efb089ac07cdc2",
+				"dweb:/ipfs/QmUtMTxUFKU6a5oFXsEJnTPvb3QPb7GDDmSv5yZ1jFHDwR"
 			]
 		}
 	},

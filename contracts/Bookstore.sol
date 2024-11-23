@@ -3,7 +3,6 @@
 pragma solidity ^0.8.26;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "hardhat/console.sol";
 
 contract BookStore  is Ownable {
     uint256 private totalBooksSold;
@@ -100,7 +99,6 @@ contract BookStore  is Ownable {
         Book storage book = books[_bookId];
         require(book.isAvailable, "This book is not available");
         require(book.stock >= _quantity, "Not enough stock available");
-        console.log(msg.value);
         require(msg.value == book.price * _quantity, "Incorrect payment amount");
         
         // Decrease stock and update availability

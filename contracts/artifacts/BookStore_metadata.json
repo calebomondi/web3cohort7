@@ -55,15 +55,15 @@
 					},
 					{
 						"indexed": false,
-						"internalType": "uint256",
+						"internalType": "uint96",
 						"name": "price",
-						"type": "uint256"
+						"type": "uint96"
 					},
 					{
 						"indexed": false,
-						"internalType": "uint256",
+						"internalType": "uint96",
 						"name": "stock",
-						"type": "uint256"
+						"type": "uint96"
 					}
 				],
 				"name": "BookAdded",
@@ -86,7 +86,7 @@
 				"anonymous": false,
 				"inputs": [
 					{
-						"indexed": false,
+						"indexed": true,
 						"internalType": "uint256",
 						"name": "bookId",
 						"type": "uint256"
@@ -99,9 +99,9 @@
 					},
 					{
 						"indexed": false,
-						"internalType": "uint256",
+						"internalType": "uint96",
 						"name": "quantity",
-						"type": "uint256"
+						"type": "uint96"
 					}
 				],
 				"name": "BookPurchased",
@@ -157,14 +157,14 @@
 						"type": "string"
 					},
 					{
-						"internalType": "uint256",
+						"internalType": "uint96",
 						"name": "_stock",
-						"type": "uint256"
+						"type": "uint96"
 					},
 					{
-						"internalType": "uint256",
+						"internalType": "uint96",
 						"name": "_price",
-						"type": "uint256"
+						"type": "uint96"
 					}
 				],
 				"name": "addBook",
@@ -180,36 +180,17 @@
 						"type": "uint256"
 					}
 				],
-				"name": "bookIds",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
 				"name": "books",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "uint96",
 						"name": "stock",
-						"type": "uint256"
+						"type": "uint96"
 					},
 					{
-						"internalType": "uint256",
+						"internalType": "uint96",
 						"name": "price",
-						"type": "uint256"
+						"type": "uint96"
 					},
 					{
 						"internalType": "bool",
@@ -238,9 +219,9 @@
 						"type": "uint256"
 					},
 					{
-						"internalType": "uint256",
+						"internalType": "uint96",
 						"name": "_quantity",
-						"type": "uint256"
+						"type": "uint96"
 					}
 				],
 				"name": "buyBook",
@@ -273,27 +254,27 @@
 				"outputs": [
 					{
 						"internalType": "string",
-						"name": "",
+						"name": "title",
 						"type": "string"
 					},
 					{
 						"internalType": "string",
-						"name": "",
+						"name": "author",
 						"type": "string"
 					},
 					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"internalType": "uint96",
+						"name": "price",
+						"type": "uint96"
 					},
 					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"internalType": "uint96",
+						"name": "stock",
+						"type": "uint96"
 					},
 					{
 						"internalType": "bool",
-						"name": "",
+						"name": "isAvailable",
 						"type": "bool"
 					}
 				],
@@ -318,9 +299,9 @@
 				"name": "getTotalBooksSold",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "uint96",
 						"name": "",
-						"type": "uint256"
+						"type": "uint96"
 					}
 				],
 				"stateMutability": "view",
@@ -421,7 +402,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Bookstore.sol": "BookStore"
+			"contracts/BookStore.sol": "BookStore"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -451,20 +432,12 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"contracts/Bookstore.sol": {
-			"keccak256": "0x4a7de9b9ffbf9983081ae52db0ffcac145191e1f5bc739d6ee4270ed7db1e89e",
+		"contracts/BookStore.sol": {
+			"keccak256": "0x7073e0e261e43d63c92653841212b50a778de5cb319b43cf9308933fe94553bf",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a926fd9d41723b3866a95be817b2b6c9554301925da25a96b13925ca69d18ca9",
-				"dweb:/ipfs/QmQ5cw9imJCG37F3ubagpaPg5d2utiSkc6HZNQ5z5PiQL9"
-			]
-		},
-		"hardhat/console.sol": {
-			"keccak256": "0xf2560b5386574153057104d19a9e68a32ee912cf23c0c8df1fe9a0607f42d543",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://a63166e036b040826baa513772451a79925daa304b38749100efb089ac07cdc2",
-				"dweb:/ipfs/QmUtMTxUFKU6a5oFXsEJnTPvb3QPb7GDDmSv5yZ1jFHDwR"
+				"bzz-raw://9bf35854ab3e6b9ded00c6dae3a5ab67ee404429a67f62208470beeb49b4eb54",
+				"dweb:/ipfs/Qme4h39irdYXQbiap3F1CVgYxVQT6eDo53fGHQ6Evk6ruN"
 			]
 		}
 	},

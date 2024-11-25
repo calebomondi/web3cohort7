@@ -181,9 +181,9 @@
 						"type": "uint256"
 					},
 					{
-						"internalType": "uint16",
+						"internalType": "uint256",
 						"name": "_price",
-						"type": "uint16"
+						"type": "uint256"
 					}
 				],
 				"name": "addBook",
@@ -240,6 +240,21 @@
 				"name": "books",
 				"outputs": [
 					{
+						"internalType": "uint256",
+						"name": "stock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isAvailable",
+						"type": "bool"
+					},
+					{
 						"internalType": "string",
 						"name": "title",
 						"type": "string"
@@ -248,21 +263,6 @@
 						"internalType": "string",
 						"name": "author",
 						"type": "string"
-					},
-					{
-						"internalType": "uint16",
-						"name": "price",
-						"type": "uint16"
-					},
-					{
-						"internalType": "uint256",
-						"name": "stock",
-						"type": "uint256"
-					},
-					{
-						"internalType": "bool",
-						"name": "isAvailable",
-						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -278,11 +278,6 @@
 					{
 						"internalType": "uint256",
 						"name": "_quantity",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_amount",
 						"type": "uint256"
 					}
 				],
@@ -535,11 +530,11 @@
 			]
 		},
 		"contracts/Bookstore.sol": {
-			"keccak256": "0xa9f73e6012a57e33c69d26d2c7ca86d0cd2a52b5c1c9e1bfa742db71db642b6b",
+			"keccak256": "0xe26701a5822ef82b573b13a3038cd2de41a5fe6770a9418e0107c6d8e89911f9",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://912ff86a7c9f455f0b85e97579a30fe9fa5ea6d8e10e9863a875962269488e19",
-				"dweb:/ipfs/QmYJrKdELwpZD9uDgwmoE68vDoKzTYn21Rx4MAE89opVK3"
+				"bzz-raw://a31c8fd0a8eb632ffb1e016ab76d76c0f8452e8c8aee70bb9ea8ff7d1d79f53b",
+				"dweb:/ipfs/QmcHV4dKeztwzfRWKZV9CpZeTuGLvHuDHoZjKsyJd6XCGB"
 			]
 		}
 	},

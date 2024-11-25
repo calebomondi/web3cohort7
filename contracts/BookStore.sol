@@ -5,14 +5,14 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract BookStore is Ownable {
     struct Book {
-        uint96 stock;        // Reduced from uint256 to uint96
-        uint96 price;        // Reduced from uint256 to uint96
+        uint96 stock;       
+        uint96 price;       
         bool isAvailable;
         string title;
         string author;
     }
 
-    uint96 private totalBooksSold;  // Reduced from uint256 to uint96
+    uint96 private totalBooksSold;  
     mapping(uint256 => Book) public books;
     uint256[] private bookIds;
 
@@ -27,7 +27,7 @@ contract BookStore is Ownable {
         require(books[_bookId].price == 0, "Book exists");
         books[_bookId] = Book({
             stock: _stock,
-            price: _price,
+            price: _price * 1 ether,
             isAvailable: _stock > 0,
             title: _title,
             author: _author
@@ -43,11 +43,12 @@ contract BookStore is Ownable {
     function removeBooks(uint256[] calldata _bookIds) external onlyOwner {
         uint256 length = _bookIds.length;
         for (uint256 i; i < length;) {
+            //Remove book from mapping
             uint256 bookId = _bookIds[i];
             require(books[bookId].price != 0, "Book not exist");
             delete books[bookId];
             
-            // Remove from bookIds array
+            // Remove  bookId from bookIds array
             for (uint256 j; j < bookIds.length;) {
                 if (bookIds[j] == bookId) {
                     bookIds[j] = bookIds[bookIds.length - 1];

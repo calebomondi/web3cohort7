@@ -21,7 +21,7 @@ contract BookStore is Ownable {
     event BookPurchased(uint256 indexed bookId, address indexed buyer, uint96 quantity);
     event BookRemoved(uint256 indexed bookId);
     event BookBatchRemoved(uint256[] bookIds);
-    event SubscriptionAdded(address indexed subscriber);          // complete on this two 
+    event SubscriptionAdded(address indexed subscriber);       
     event SubscriptionRemoved(address indexed subscriber);
 
     constructor() Ownable(msg.sender) {}

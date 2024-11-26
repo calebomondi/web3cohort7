@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.26;
 
-import './Bookstore.sol';
+import './BookStore.sol';
 
 contract AdvancedBookstore is BookStore  {
     mapping (uint256 => bool) public bestseller;
@@ -20,5 +20,7 @@ contract AdvancedBookstore is BookStore  {
     function isBestSeller(uint256 bookId) public view returns (bool) {
         return bestseller[bookId];
     }
+
+    //remove book is in my main contract
 
  }

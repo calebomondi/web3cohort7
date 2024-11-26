@@ -6,6 +6,11 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -50,15 +55,15 @@
 					},
 					{
 						"indexed": false,
-						"internalType": "uint256",
+						"internalType": "uint96",
 						"name": "price",
-						"type": "uint256"
+						"type": "uint96"
 					},
 					{
 						"indexed": false,
-						"internalType": "uint256",
+						"internalType": "uint96",
 						"name": "stock",
-						"type": "uint256"
+						"type": "uint96"
 					}
 				],
 				"name": "BookAdded",
@@ -81,7 +86,7 @@
 				"anonymous": false,
 				"inputs": [
 					{
-						"indexed": false,
+						"indexed": true,
 						"internalType": "uint256",
 						"name": "bookId",
 						"type": "uint256"
@@ -94,9 +99,9 @@
 					},
 					{
 						"indexed": false,
-						"internalType": "uint256",
+						"internalType": "uint96",
 						"name": "quantity",
-						"type": "uint256"
+						"type": "uint96"
 					}
 				],
 				"name": "BookPurchased",
@@ -135,6 +140,25 @@
 				"type": "event"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "customer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "points",
+						"type": "uint256"
+					}
+				],
+				"name": "pointsAdded",
+				"type": "event"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -152,14 +176,14 @@
 						"type": "string"
 					},
 					{
-						"internalType": "uint256",
+						"internalType": "uint96",
 						"name": "_stock",
-						"type": "uint256"
+						"type": "uint96"
 					},
 					{
-						"internalType": "uint16",
+						"internalType": "uint96",
 						"name": "_price",
-						"type": "uint16"
+						"type": "uint96"
 					}
 				],
 				"name": "addBook",
@@ -170,20 +194,19 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "bookIds",
-				"outputs": [
+						"internalType": "address",
+						"name": "_customer",
+						"type": "address"
+					},
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "_amount",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
+				"name": "addCustomerPoints",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -197,6 +220,21 @@
 				"name": "books",
 				"outputs": [
 					{
+						"internalType": "uint96",
+						"name": "stock",
+						"type": "uint96"
+					},
+					{
+						"internalType": "uint96",
+						"name": "price",
+						"type": "uint96"
+					},
+					{
+						"internalType": "bool",
+						"name": "isAvailable",
+						"type": "bool"
+					},
+					{
 						"internalType": "string",
 						"name": "title",
 						"type": "string"
@@ -205,21 +243,6 @@
 						"internalType": "string",
 						"name": "author",
 						"type": "string"
-					},
-					{
-						"internalType": "uint16",
-						"name": "price",
-						"type": "uint16"
-					},
-					{
-						"internalType": "uint256",
-						"name": "stock",
-						"type": "uint256"
-					},
-					{
-						"internalType": "bool",
-						"name": "isAvailable",
-						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -233,14 +256,9 @@
 						"type": "uint256"
 					},
 					{
-						"internalType": "uint256",
+						"internalType": "uint96",
 						"name": "_quantity",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
+						"type": "uint96"
 					}
 				],
 				"name": "buyBook",
@@ -249,13 +267,32 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "customerewards",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "points",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "getAllBooks",
 				"outputs": [
 					{
-						"internalType": "uint256[]",
+						"internalType": "string[]",
 						"name": "",
-						"type": "uint256[]"
+						"type": "string[]"
 					}
 				],
 				"stateMutability": "view",
@@ -273,28 +310,47 @@
 				"outputs": [
 					{
 						"internalType": "string",
-						"name": "",
+						"name": "title",
 						"type": "string"
 					},
 					{
 						"internalType": "string",
-						"name": "",
+						"name": "author",
 						"type": "string"
 					},
 					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"internalType": "uint96",
+						"name": "price",
+						"type": "uint96"
 					},
 					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"internalType": "uint96",
+						"name": "stock",
+						"type": "uint96"
 					},
 					{
 						"internalType": "bool",
-						"name": "",
+						"name": "isAvailable",
 						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_customer",
+						"type": "address"
+					}
+				],
+				"name": "getCustomerPoints",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -318,9 +374,9 @@
 				"name": "getTotalBooksSold",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "uint96",
 						"name": "",
-						"type": "uint256"
+						"type": "uint96"
 					}
 				],
 				"stateMutability": "view",
@@ -451,20 +507,20 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"contracts/Bookstore.sol": {
-			"keccak256": "0xa9f73e6012a57e33c69d26d2c7ca86d0cd2a52b5c1c9e1bfa742db71db642b6b",
+		"contracts/BookStore.sol": {
+			"keccak256": "0x01ea2f088d2f82edc684694c0f51394fbf3d10cccdf4825598f03e7f881e5663",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://912ff86a7c9f455f0b85e97579a30fe9fa5ea6d8e10e9863a875962269488e19",
-				"dweb:/ipfs/QmYJrKdELwpZD9uDgwmoE68vDoKzTYn21Rx4MAE89opVK3"
+				"bzz-raw://db2028b4255729d8c6348a26e9a6737b181c4835044e6444f4b3c4af9f047310",
+				"dweb:/ipfs/QmYcb32tgEhqhxYpuAYMK9NateGLL2DDidw1XCiGMtLjM6"
 			]
 		},
 		"contracts/LoyaltyProgram.sol": {
-			"keccak256": "0x587e45895d6a175d875f9e54c6585e15c7b9afbdc1de20a3e143ccddc5472a0e",
+			"keccak256": "0xff5b8265b6507b9ba3336671dc2f42d52aa9aed47246d5b6981467ca9d447ef2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a780aad1b8cc1b255236b52338b573f82996e2deddad83518e1b8301f0e84d01",
-				"dweb:/ipfs/Qmb5ryvSQKyyzvUQZjfeUYMNSWt66UHvHKUeeqxAuPp1cj"
+				"bzz-raw://d3b0b313047b233ce9c8b5ba99105e9bb138f650441474aaed8234566123e39e",
+				"dweb:/ipfs/QmUccaZ37ViHqepcCEXnE1BhTuX7YTb4J2SToKhtBEukfC"
 			]
 		}
 	},

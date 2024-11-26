@@ -2,12 +2,12 @@
 
 pragma solidity ^0.8.26;
 
-import './Bookstore.sol';
+import './BookStore.sol';
 
+//1. LoyaltyProgram Contract
 contract  CustomerPoint is BookStore {
 
     struct CustomerPoints {
-        address buyer;
         uint256 points;
     }
 
@@ -17,28 +17,28 @@ contract  CustomerPoint is BookStore {
 
     constructor () BookStore() {}
 
-    function buyBook(uint256 _bookId, uint256 _quantity, uint256 _amount) public virtual override payable {
-        super.buyBook(_bookId,_quantity,_amount);
-
-        addCustomerPoints(msg.sender,_amount);
+    function buyBook(uint256 _bookId, uint96 _quantity) public virtual  override payable {
+        super.buyBook(_bookId, _quantity);
+        addCustomerPoints(msg.sender, msg.value);
     }
     
     function addCustomerPoints (address _customer, uint256 _amount) public {
         uint256 _points;
+        uint256 value = 1e18;
 
-        if(_amount < 1000) {
+        if(_amount < value) {
             _points = 10;
         }
-        else if (_amount >= 1000 && _amount < 2500 ){
+        else if (_amount >= value && _amount < 3*value ){
             _points = 15;
         }
-        else if (_amount >= 2500 && _amount < 5000 ){
+        else if (_amount >= 3*value && _amount < 5*value ){
             _points = 20;
         }
-        else if (_amount >= 5000 && _amount < 7500 ){
+        else if (_amount >= 5*value && _amount < 8*value ){
             _points = 25;
         }
-        else if (_amount >= 7500 && _amount < 10000 ){
+        else if (_amount >= 8*value && _amount < 10*value ){
             _points = 30;
         }
 
@@ -47,10 +47,8 @@ contract  CustomerPoint is BookStore {
         if (customer.points > 0) {
             customerewards[_customer].points += _points;
         } 
-
-        if(customerewards[_customer].buyer == address(0)) {
+        else {
             customerewards[_customer] = CustomerPoints({
-                buyer : _customer,
                 points : _points
             });
         }

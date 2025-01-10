@@ -28,9 +28,9 @@
 					},
 					{
 						"indexed": false,
-						"internalType": "uint256",
-						"name": "timestamp",
-						"type": "uint256"
+						"internalType": "uint32",
+						"name": "duration",
+						"type": "uint32"
 					}
 				],
 				"name": "ProposalsCreated",
@@ -215,11 +215,11 @@
 	},
 	"sources": {
 		"contracts/DAOProposal.sol": {
-			"keccak256": "0x3ea3df5a1f30a52880529d4ce6aa7b6a14560d99646ded8abbd4a11887b7bb62",
+			"keccak256": "0xf766b32a4d66c9b2ff1d373d79e7a436608dc7ab04ca04254ac3da906d8b9bd9",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d66d5a5f14fe50ceceb2ca47e7cfce01911449bb621628e090e0a749310499c7",
-				"dweb:/ipfs/QmPP3GrLfZPBmAcjZZR8bwrqDGgVfSs6Aw6YL49ZacYV9V"
+				"bzz-raw://6ae39bfc174f89ec259559d9cf46eda800f50181d1157b28bc82a20d35804c66",
+				"dweb:/ipfs/QmdNvaKh7BZoP6LWRabQ4jUFW81DmtJKtj66dTvafhmscm"
 			]
 		}
 	},

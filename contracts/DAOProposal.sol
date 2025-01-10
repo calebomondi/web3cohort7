@@ -26,7 +26,7 @@ contract DaoProposal {
         uint256 indexed proposalID, 
         string title,
         address indexed  owner, 
-        uint256 timestamp
+        uint32 duration
     );
     event VoteCasted(
         uint indexed proposalID, 
@@ -54,7 +54,7 @@ contract DaoProposal {
 
         ProposalCount++;
 
-        emit ProposalsCreated(ProposalCount - 1, _title, msg.sender, block.timestamp);
+        emit ProposalsCreated(ProposalCount - 1, _title, msg.sender, duration);
 
         return ProposalCount - 1;
     }

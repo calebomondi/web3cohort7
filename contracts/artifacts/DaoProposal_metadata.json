@@ -126,14 +126,14 @@
 						"type": "uint256"
 					},
 					{
-						"internalType": "string",
+						"internalType": "uint256",
 						"name": "startTime",
-						"type": "string"
+						"type": "uint256"
 					},
 					{
-						"internalType": "string",
+						"internalType": "uint256",
 						"name": "endTime",
-						"type": "string"
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -152,14 +152,9 @@
 						"type": "string"
 					},
 					{
-						"internalType": "string",
-						"name": "_startTime",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "_endTime",
-						"type": "string"
+						"internalType": "uint32",
+						"name": "duration",
+						"type": "uint32"
 					}
 				],
 				"name": "createProposal",
@@ -220,11 +215,11 @@
 	},
 	"sources": {
 		"contracts/DAOProposal.sol": {
-			"keccak256": "0xeade77c50129d9a0a8f2bbfa03ef43239258f404ef5b9a5ece0181a83279947a",
+			"keccak256": "0x3ea3df5a1f30a52880529d4ce6aa7b6a14560d99646ded8abbd4a11887b7bb62",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://3a159078b446fc0913d49064ae6fc296829dd47639044e84e2fbcf1c9dd88e55",
-				"dweb:/ipfs/Qme23LGenCqs1wJrufx6TCtfir9RCNRV8eL1sgbyNHogAJ"
+				"bzz-raw://d66d5a5f14fe50ceceb2ca47e7cfce01911449bb621628e090e0a749310499c7",
+				"dweb:/ipfs/QmPP3GrLfZPBmAcjZZR8bwrqDGgVfSs6Aw6YL49ZacYV9V"
 			]
 		}
 	},

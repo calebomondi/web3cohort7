@@ -12,8 +12,8 @@ contract DaoProposal {
         bool executed; 
         uint256 votedYes;
         uint256 votedNo;
-        string startTime;
-        string endTime;
+        uint256 startTime;
+        uint256 endTime;
     } // type of proposal
 
     enum Vote {
@@ -40,7 +40,7 @@ contract DaoProposal {
     mapping(address => mapping(uint256 => bool)) votes;
 
 
-    function createProposal(string memory _title, string memory _description, string memory _startTime, string memory _endTime) 
+    function createProposal(string memory _title, string memory _description, uint32 duration) 
         external returns(uint256) 
     {
         Proposal storage proposal = Proposals[ProposalCount];
@@ -49,8 +49,8 @@ contract DaoProposal {
         proposal.title = _title;
         proposal.executed = false;
         proposal.description = _description;
-        proposal.startTime = _startTime;
-        proposal.endTime = _endTime;
+        proposal.startTime = block.timestamp;
+        proposal.endTime = block.timestamp + (duration * 1 days);
 
         ProposalCount++;
 

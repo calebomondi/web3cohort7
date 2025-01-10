@@ -174,6 +174,19 @@
 						"internalType": "uint256",
 						"name": "proposalID",
 						"type": "uint256"
+					}
+				],
+				"name": "executeProposal",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalID",
+						"type": "uint256"
 					},
 					{
 						"internalType": "enum DaoProposal.Vote",
@@ -215,11 +228,11 @@
 	},
 	"sources": {
 		"contracts/DAOProposal.sol": {
-			"keccak256": "0xf766b32a4d66c9b2ff1d373d79e7a436608dc7ab04ca04254ac3da906d8b9bd9",
+			"keccak256": "0xf195b542a3957b40c8e7d711c6d324237305a54dfd41b459410d9a43b2dcc600",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://6ae39bfc174f89ec259559d9cf46eda800f50181d1157b28bc82a20d35804c66",
-				"dweb:/ipfs/QmdNvaKh7BZoP6LWRabQ4jUFW81DmtJKtj66dTvafhmscm"
+				"bzz-raw://43e322b633ad26229280ae5d1be3aa8658a058506f22453b1e178fb9fa179716",
+				"dweb:/ipfs/QmdqzRvbcLAF83EvQHVJpFWnmpz3VhK87LNaJt2RB2Y1MA"
 			]
 		}
 	},

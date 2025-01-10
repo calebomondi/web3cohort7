@@ -77,5 +77,15 @@ contract DaoProposal {
     }
 
     // exceute proposal
+    modifier  onlyOwner (uint256 proposalID){
+        require(msg.sender == Proposals[proposalID].owner, "You are not the owner of this proposal");
+        _;
+    }
+
+    function executeProposal (uint256 proposalID) external onlyOwner(proposalID) {
+        require(!Proposals[proposalID].executed, "This proposal has already been executed ");
+        
+        Proposals[proposalID].executed = true;
+    }
 
 }

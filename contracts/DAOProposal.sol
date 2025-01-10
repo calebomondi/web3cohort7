@@ -34,6 +34,10 @@ contract DaoProposal {
         Vote vote,
         uint256 timestamp
     );
+    event ExecutedProposal(
+        uint indexed proposalId,
+        uint256 timestamp
+    );
 
     mapping(uint => Proposal) public Proposals;
     uint256 public ProposalCount = 0;
@@ -86,6 +90,8 @@ contract DaoProposal {
         require(!Proposals[proposalID].executed, "This proposal has already been executed ");
         
         Proposals[proposalID].executed = true;
+
+        emit ExecutedProposal(proposalID, block.timestamp);
     }
 
 }

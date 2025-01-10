@@ -11,6 +11,25 @@
 					{
 						"indexed": true,
 						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "ExecutedProposal",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
 						"name": "proposalID",
 						"type": "uint256"
 					},
@@ -228,11 +247,11 @@
 	},
 	"sources": {
 		"contracts/DAOProposal.sol": {
-			"keccak256": "0xf195b542a3957b40c8e7d711c6d324237305a54dfd41b459410d9a43b2dcc600",
+			"keccak256": "0x92c94003d7aad11d31a685cdb1c918d0d91b3d5c11ea534fb00163a3c095ac43",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://43e322b633ad26229280ae5d1be3aa8658a058506f22453b1e178fb9fa179716",
-				"dweb:/ipfs/QmdqzRvbcLAF83EvQHVJpFWnmpz3VhK87LNaJt2RB2Y1MA"
+				"bzz-raw://8e56bbe2c8f2bd293f6bc71abb249b7ce7f3259675317450347a9a5f2da91900",
+				"dweb:/ipfs/Qmb8BdekXMGeujZxZp6ZVeKrQrHWy48mjLzS9W8QD9tnFQ"
 			]
 		}
 	},

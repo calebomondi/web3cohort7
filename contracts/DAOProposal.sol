@@ -22,6 +22,18 @@ contract DaoProposal {
     }
 
     //   improve items adding events 
+    event  ProposalsCreated(
+        uint256 indexed proposalID, 
+        string title,
+        address indexed  owner, 
+        uint256 timestamp
+    );
+    event VoteCasted(
+        uint indexed proposalID, 
+        address indexed voter,
+        Vote vote,
+        uint256 timestamp
+    );
 
     mapping(uint => Proposal) public Proposals;
     uint256 public ProposalCount = 0;
@@ -42,6 +54,8 @@ contract DaoProposal {
 
         ProposalCount++;
 
+        emit ProposalsCreated(ProposalCount - 1, _title, msg.sender, block.timestamp);
+
         return ProposalCount - 1;
     }
 
@@ -58,6 +72,8 @@ contract DaoProposal {
         }
 
         votes[msg.sender][proposal.proposalId] = true;
+
+        emit VoteCasted(proposalID, msg.sender, vote, block.timestamp);
     }
 
     // exceute proposal

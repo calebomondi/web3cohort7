@@ -6,6 +6,68 @@
 	"output": {
 		"abi": [
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "proposalID",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "ProposalsCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "proposalID",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "voter",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum DaoProposal.Vote",
+						"name": "vote",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "VoteCasted",
+				"type": "event"
+			},
+			{
 				"inputs": [],
 				"name": "ProposalCount",
 				"outputs": [
@@ -158,11 +220,11 @@
 	},
 	"sources": {
 		"contracts/DAOProposal.sol": {
-			"keccak256": "0xc6f2767eb97abcc39a1b1da77d6ea6a7f1a4fd3b930ad326679857b3759d19b8",
+			"keccak256": "0xeade77c50129d9a0a8f2bbfa03ef43239258f404ef5b9a5ece0181a83279947a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1036238287f01b18cf0ce25ecbf6fbe50ea057b90b292bb400b6e7dba6062644",
-				"dweb:/ipfs/QmWfeMaMj65hKe4Gfh7GQkkoBnr9sEcEwVUghCMte9WQGG"
+				"bzz-raw://3a159078b446fc0913d49064ae6fc296829dd47639044e84e2fbcf1c9dd88e55",
+				"dweb:/ipfs/Qme23LGenCqs1wJrufx6TCtfir9RCNRV8eL1sgbyNHogAJ"
 			]
 		}
 	},

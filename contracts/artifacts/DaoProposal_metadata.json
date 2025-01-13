@@ -247,11 +247,11 @@
 	},
 	"sources": {
 		"contracts/DAOProposal.sol": {
-			"keccak256": "0x92c94003d7aad11d31a685cdb1c918d0d91b3d5c11ea534fb00163a3c095ac43",
+			"keccak256": "0x58363ba545edab2cf29b5f41bb42cc695a181891b9050508bdf45368f8074357",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://8e56bbe2c8f2bd293f6bc71abb249b7ce7f3259675317450347a9a5f2da91900",
-				"dweb:/ipfs/Qmb8BdekXMGeujZxZp6ZVeKrQrHWy48mjLzS9W8QD9tnFQ"
+				"bzz-raw://f6df7fda73e9be070b48b9e65cf9fe9d6e6167a0b7592c9728645390e90a68d0",
+				"dweb:/ipfs/QmP41M1kNtiVzgunY2k8wNeDfJspZwiEtrG1GZqNMoCnyk"
 			]
 		}
 	},

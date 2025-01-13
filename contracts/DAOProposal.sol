@@ -14,7 +14,7 @@ contract DaoProposal {
         uint256 votedNo;
         uint256 startTime;
         uint256 endTime;
-    } // type of proposal
+    }
 
     enum Vote {
         Yes, 
@@ -49,7 +49,7 @@ contract DaoProposal {
     {
         Proposal storage proposal = Proposals[ProposalCount];
         proposal.owner = msg.sender;
-        proposal.proposalId = ProposalCount; // index 0
+        proposal.proposalId = ProposalCount;
         proposal.title = _title;
         proposal.executed = false;
         proposal.description = _description;

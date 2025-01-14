@@ -322,11 +322,11 @@
 	},
 	"sources": {
 		"contracts/SmartCV.sol": {
-			"keccak256": "0x9973fa47e8258dd0fdcd75f89dd30fe092bb964bc1dd0490a9aa8931dbe84512",
+			"keccak256": "0x6e848a5047cc5b97600b135586ebe3a4fb8650db7e8f90d5ddf34ebe3c1e1ac0",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f32b2e1b8a7019e761ea226177c01994c6d8215941edf344b39c854be3873dd2",
-				"dweb:/ipfs/QmVM9y1dY3ipw9RpGkKodsoDhASzXjdAJfNrG4aQM5uSYp"
+				"bzz-raw://5af6d66deff6a7977de34af6fbac7c7b2953de3a70dae9ea40e9c7815bd3d0b5",
+				"dweb:/ipfs/QmQtJcCcDGzzqTRXsVZAVmTqtXm8XxJRG1qrsJ66RsonUY"
 			]
 		}
 	},

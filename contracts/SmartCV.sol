@@ -122,13 +122,4 @@ contract myCV {
         return Profile[arg];
     }
 
-    // keccak256
-    //     function getSize(string memory arg) public view returns (uint) {
-    //         if (keccak256(arg) == keccak256("projects")) { return projects.length; }
-    //         if (keccak256(arg) == keccak256("educations")) { return educations.length; }
-    //         if (keccak256(arg) == keccak256("publications")) { return publications.length; }
-    //         if (keccak256(arg) == keccak256("skills")) { return skills.length; }
-    //         revert();
-    // }
-
 }

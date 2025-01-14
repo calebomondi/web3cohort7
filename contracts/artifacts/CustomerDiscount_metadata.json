@@ -164,6 +164,32 @@
 					{
 						"indexed": true,
 						"internalType": "address",
+						"name": "subscriber",
+						"type": "address"
+					}
+				],
+				"name": "SubscriptionAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "subscriber",
+						"type": "address"
+					}
+				],
+				"name": "SubscriptionRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
 						"name": "customer",
 						"type": "address"
 					},
@@ -176,6 +202,32 @@
 				],
 				"name": "pointsAdded",
 				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_customer",
+						"type": "address"
+					}
+				],
+				"name": "Subscribe",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_customer",
+						"type": "address"
+					}
+				],
+				"name": "Unsubcribe",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			},
 			{
 				"inputs": [
@@ -283,6 +335,25 @@
 				"name": "buyBook",
 				"outputs": [],
 				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_customer",
+						"type": "address"
+					}
+				],
+				"name": "checkIfSubscribed",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -496,6 +567,25 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "subscribers",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
 						"name": "newOwner",
 						"type": "address"
 					}
@@ -572,11 +662,11 @@
 			]
 		},
 		"contracts/BookStore.sol": {
-			"keccak256": "0x01ea2f088d2f82edc684694c0f51394fbf3d10cccdf4825598f03e7f881e5663",
+			"keccak256": "0xbec88d1ffbcc1144daa7fa4d70047c63932e5cc01cee2b2384e5b1c0623bbd92",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://db2028b4255729d8c6348a26e9a6737b181c4835044e6444f4b3c4af9f047310",
-				"dweb:/ipfs/QmYcb32tgEhqhxYpuAYMK9NateGLL2DDidw1XCiGMtLjM6"
+				"bzz-raw://f23dcf7a939af9c11480ee2ea8dc1d39c2806d1b1e89b5b7754815711eda5252",
+				"dweb:/ipfs/Qma6iy29ipYLxUryT8b6ekBxu8PcRdC55TTxatRjao1h64"
 			]
 		},
 		"contracts/CustomerDiscount.sol": {

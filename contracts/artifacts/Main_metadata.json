@@ -1,0 +1,102 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "_values",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_a",
+						"type": "uint256"
+					}
+				],
+				"name": "containsValue",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_a",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_b",
+						"type": "string"
+					}
+				],
+				"name": "joinStrings",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/fileA.sol": "Main"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/fileA.sol": {
+			"keccak256": "0x68f696848cf3cdc767fe0bcb8e986085dfd86e16483f07cd2ad20f2f150070dd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://377e1fd31912af3ff2ab39376f719453dcec6c83fd06491c921da4b37aa17541",
+				"dweb:/ipfs/QmWyitsTWN5WMwLnzUwzxxi7KM5e7DkWMmsbHxncyWrDQk"
+			]
+		},
+		"contracts/fileB.sol": {
+			"keccak256": "0x14e0a8cf85f804602c9b6b12583c9434439e09ed375a2e809ff244da12d6ef86",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f18f90ed237a9e200a83022a72b5cfb37edf75973bd941f85102e3d41e169c91",
+				"dweb:/ipfs/QmQoZXBgExiNBfDxtm8fsPDdEDfUWce7n13Xg9nX9h32qQ"
+			]
+		}
+	},
+	"version": 1
+}

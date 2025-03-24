@@ -5,6 +5,10 @@ library StringUtils {
     function concat(string memory a, string memory b) public pure returns (string memory) {
         return string(abi.encodePacked(a, b));
     }
+
+    function compare(string memory a, string memory b) public pure returns (bool){
+        return keccak256(abi.encodePacked(a, b)) == keccak256(abi.encodePacked(b, a));
+    }
 }
 
 library ArrayUtils {
@@ -16,5 +20,13 @@ library ArrayUtils {
         }
 
         return false;
+    }
+
+    function double(uint number) public pure returns (uint256){
+        return 2 * number;
+    }
+
+    function square(uint number) public pure returns (uint256) {
+        return  number * number;
     }
 }

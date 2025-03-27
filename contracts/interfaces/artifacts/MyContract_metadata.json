@@ -1,0 +1,117 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_counter",
+						"type": "address"
+					}
+				],
+				"name": "getCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_counter",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "incrementBy",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_counter",
+						"type": "address"
+					}
+				],
+				"name": "incrementCounter",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_counter",
+						"type": "address"
+					}
+				],
+				"name": "incrementCounterBy10",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/interfaces/counter.sol": "MyContract"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/interfaces/ICounter.sol": {
+			"keccak256": "0x66a33543f4697c3b3e91eecd982c49a354a69d663be48e1bd74d54060e74e35b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://294faf1de1c052bfbcde81020d3ccda40995065f0382c086c2810fe582f9d0a0",
+				"dweb:/ipfs/QmQ9zdzQqQtb4912XtRWZ5w1mVwpZzZRPx3ERHWETwNBBB"
+			]
+		},
+		"contracts/interfaces/counter.sol": {
+			"keccak256": "0xf0af3622878a6c8ac50cc91f95eb8268dfc4f0115913d568c5c7a91bf0c7c288",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://10ccb4301dd4aae026f457bab1c5dff732a600852f3868a43bc13d8db6ad7d95",
+				"dweb:/ipfs/QmXTuZeSL6MwPTjUPX6Hwg7XF6LwpbJmQYryKXUqqoe9MW"
+			]
+		}
+	},
+	"version": 1
+}

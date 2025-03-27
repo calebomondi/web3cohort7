@@ -1,0 +1,92 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenContract",
+						"type": "address"
+					}
+				],
+				"name": "checkBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenAddress",
+						"type": "address"
+					}
+				],
+				"name": "getTotalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/interfaces/mywallet.sol": "MyWallet"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/interfaces/mywallet.sol": {
+			"keccak256": "0xcb602b61f8276bdd6abfbe4d8ac0f939675ef60389fd1062f6eebcce53a1d593",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3d8319122c3e65eddfcec5af468b2f0178b4c1d7795bc99746339c0fc8b81826",
+				"dweb:/ipfs/QmULwrLNTN8MBfjeixBi2UqyCr8nwkE9Z92621h6XbYHKZ"
+			]
+		},
+		"contracts/interfaces/token.sol": {
+			"keccak256": "0x6df0fb63217225625e6fe9451158a034827bb00483257558a56a074cbedcd644",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e65b07c5b34a2a3c864a45f2d5e9f90ccf61f95336eb4dff8067c352e372652e",
+				"dweb:/ipfs/QmRNdGyhB9qcD26YQCUYftBbF8DXmsnQApB7egFrX5zDUc"
+			]
+		}
+	},
+	"version": 1
+}

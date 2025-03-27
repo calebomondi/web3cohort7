@@ -1,10 +1,10 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.26;
 
-import  { StringUtils, ArrayUtils as AU } from './fileB.sol';
+import  { StringUtils, ArrayUtils as AU } from './library.sol';
 
 contract Main {
-    //using libraries
+    //using 
     using StringUtils for string;
     using AU for uint;
 

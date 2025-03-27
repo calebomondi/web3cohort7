@@ -69,7 +69,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/fileD.sol": "App"
+			"contracts/c2c/main.sol": "App"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -83,7 +83,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Storage.sol": {
+		"contracts/c2c/Storage.sol": {
 			"keccak256": "0x2916ad67de8b58d845807107a9501b161d79d4637601a5672a651db62bfe0926",
 			"license": "MIT",
 			"urls": [
@@ -91,12 +91,12 @@
 				"dweb:/ipfs/QmcHPKXFtcLc49jnQWBvVWGijyC3dY5LN9dUcdMJbY19yC"
 			]
 		},
-		"contracts/fileD.sol": {
-			"keccak256": "0x59a761ade0c21cb8dfd6075b6dde4ae27afe0c089d973b246a2397a97328830d",
+		"contracts/c2c/main.sol": {
+			"keccak256": "0xf6877b60c2cbf71ec9e203f56bfbe244627dae531b119c9d4eaa71865d965d7f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5971a7d9da7cb2c22cf7f9c257fd600a55b5ea34eaa935151c4cf0025797a702",
-				"dweb:/ipfs/QmUtESewXsffP1Ghhcthm6seWfY5HfDSr6SwsbFd1V854E"
+				"bzz-raw://d0e18ef4bd72fba5928184e180d988b14c5e659057545d382c80d718ee755107",
+				"dweb:/ipfs/QmcS8o8AcpRsp6jJb11tDCkNomcRXufAE4wfYF84q6ccsn"
 			]
 		}
 	},

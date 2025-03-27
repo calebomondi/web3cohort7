@@ -8,17 +8,17 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256[]",
-						"name": "_values",
-						"type": "uint256[]"
+						"internalType": "string",
+						"name": "a",
+						"type": "string"
 					},
 					{
-						"internalType": "uint256",
-						"name": "_a",
-						"type": "uint256"
+						"internalType": "string",
+						"name": "b",
+						"type": "string"
 					}
 				],
-				"name": "containsValue",
+				"name": "compare",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -33,16 +33,16 @@
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "_a",
+						"name": "a",
 						"type": "string"
 					},
 					{
 						"internalType": "string",
-						"name": "_b",
+						"name": "b",
 						"type": "string"
 					}
 				],
-				"name": "joinStrings",
+				"name": "concat",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -67,7 +67,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/fileA.sol": "Main"
+			"contracts/libraries/library.sol": "StringUtils"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -81,20 +81,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/fileA.sol": {
-			"keccak256": "0x68f696848cf3cdc767fe0bcb8e986085dfd86e16483f07cd2ad20f2f150070dd",
+		"contracts/libraries/library.sol": {
+			"keccak256": "0xb956d9a660ad055437d413771dd75bdf45c5637b8030f66bac669afc3de51436",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://377e1fd31912af3ff2ab39376f719453dcec6c83fd06491c921da4b37aa17541",
-				"dweb:/ipfs/QmWyitsTWN5WMwLnzUwzxxi7KM5e7DkWMmsbHxncyWrDQk"
-			]
-		},
-		"contracts/fileB.sol": {
-			"keccak256": "0x14e0a8cf85f804602c9b6b12583c9434439e09ed375a2e809ff244da12d6ef86",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://f18f90ed237a9e200a83022a72b5cfb37edf75973bd941f85102e3d41e169c91",
-				"dweb:/ipfs/QmQoZXBgExiNBfDxtm8fsPDdEDfUWce7n13Xg9nX9h32qQ"
+				"bzz-raw://1b1d77642f74c87425230c5f23c6592ee7be4d1970918e3de9f8ad9f61843353",
+				"dweb:/ipfs/Qmcj61wekdArzt7567JKxB1FETnQsfvt5spuu3n6XZdnTS"
 			]
 		}
 	},

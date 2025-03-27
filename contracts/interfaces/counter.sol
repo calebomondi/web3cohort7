@@ -5,7 +5,8 @@ import { ICounter } from './ICounter.sol';
 
 contract MyContract {
     function incrementCounter(address _counter) external {
-        ICounter(_counter).increment();
+        ICounter counter = ICounter(_counter);
+        counter.increment();
     }
 
     function incrementCounterBy10(address _counter) external  {

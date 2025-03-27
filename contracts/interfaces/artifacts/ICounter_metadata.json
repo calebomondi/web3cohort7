@@ -6,6 +6,19 @@
 	"output": {
 		"abi": [
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "IncrementedTo",
+				"type": "event"
+			},
+			{
 				"inputs": [],
 				"name": "count",
 				"outputs": [
@@ -16,6 +29,13 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "decrement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -74,11 +94,11 @@
 	},
 	"sources": {
 		"contracts/interfaces/ICounter.sol": {
-			"keccak256": "0x66a33543f4697c3b3e91eecd982c49a354a69d663be48e1bd74d54060e74e35b",
+			"keccak256": "0x2ce85168bd8c295da666b385cffbed1db5e4b5115d848bf8c43fc6cf22a7c0ad",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://294faf1de1c052bfbcde81020d3ccda40995065f0382c086c2810fe582f9d0a0",
-				"dweb:/ipfs/QmQ9zdzQqQtb4912XtRWZ5w1mVwpZzZRPx3ERHWETwNBBB"
+				"bzz-raw://d9a916e37a106123cbf8ead8e5bdd7b4ca1dc5180c92ae8bc42114d8a3be184e",
+				"dweb:/ipfs/QmQPXLjYtszinjdnQKBTnSA4FwBSar1WArvXQVbUQrFsVK"
 			]
 		}
 	},

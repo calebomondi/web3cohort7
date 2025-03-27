@@ -50,12 +50,26 @@
 		"gasEstimates": null,
 		"methodIdentifiers": {
 			"count()": "06661abd",
+			"decrement()": "2baeceb7",
 			"increment()": "d09de08a",
 			"incrementBy(uint256)": "03df179c",
 			"incrementBy10()": "f7164d75"
 		}
 	},
 	"abi": [
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "newAmount",
+					"type": "uint256"
+				}
+			],
+			"name": "IncrementedTo",
+			"type": "event"
+		},
 		{
 			"inputs": [],
 			"name": "count",
@@ -67,6 +81,13 @@
 				}
 			],
 			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "decrement",
+			"outputs": [],
+			"stateMutability": "nonpayable",
 			"type": "function"
 		},
 		{

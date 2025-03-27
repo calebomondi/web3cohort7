@@ -82,7 +82,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/interfaces/counter.sol": "MyContract"
+			"contracts/interfaces/counterII.sol": "MyContract"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -97,14 +97,14 @@
 	},
 	"sources": {
 		"contracts/interfaces/ICounter.sol": {
-			"keccak256": "0x66a33543f4697c3b3e91eecd982c49a354a69d663be48e1bd74d54060e74e35b",
+			"keccak256": "0x3226ce1a8a02f1150fb85c066813585434aaeb29779fc9453a939fdf28a3391a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://294faf1de1c052bfbcde81020d3ccda40995065f0382c086c2810fe582f9d0a0",
-				"dweb:/ipfs/QmQ9zdzQqQtb4912XtRWZ5w1mVwpZzZRPx3ERHWETwNBBB"
+				"bzz-raw://587f6ebc06f1d5342c36eb3e067be90905d622e66c4422aa970429582b5cfea6",
+				"dweb:/ipfs/QmbHFq9LJkRpp3KB5h7UjdYtW9MTsUcN4rX8HstdrWSEx9"
 			]
 		},
-		"contracts/interfaces/counter.sol": {
+		"contracts/interfaces/counterII.sol": {
 			"keccak256": "0x7242ef454229d8377c54d23b3085bb3615de6514ac091566f5d66f24b57941e2",
 			"license": "MIT",
 			"urls": [

@@ -1,5 +1,5 @@
 {
-	"id": "8df3e2db69254fd974ceeb3789af021b",
+	"id": "ada1cd87cdf80a6040d8431e045796a6",
 	"_format": "hh-sol-build-info-1",
 	"solcVersion": "0.8.26",
 	"solcLongVersion": "0.8.26+commit.8a97fa7a",
@@ -7,7 +7,7 @@
 		"language": "Solidity",
 		"sources": {
 			"contracts/interfaces/ICounter.sol": {
-				"content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ninterface ICounter {\r\n    function count() external view returns (uint);\r\n    function increment() external;\r\n    function incrementBy10() external;\r\n    function incrementBy(uint _amount) external;\r\n}"
+				"content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ninterface ICounter {\r\n    //functions\r\n    function count() external view returns (uint);\r\n    function increment() external;\r\n    function incrementBy10() external;\r\n    function incrementBy(uint _amount) external;\r\n    function decrement() external;\r\n\r\n    //events\r\n    event IncrementedTo(uint newAmount);\r\n}"
 			}
 		},
 		"settings": {
@@ -44,6 +44,19 @@
 				"ICounter": {
 					"abi": [
 						{
+							"anonymous": false,
+							"inputs": [
+								{
+									"indexed": false,
+									"internalType": "uint256",
+									"name": "newAmount",
+									"type": "uint256"
+								}
+							],
+							"name": "IncrementedTo",
+							"type": "event"
+						},
+						{
 							"inputs": [],
 							"name": "count",
 							"outputs": [
@@ -54,6 +67,13 @@
 								}
 							],
 							"stateMutability": "view",
+							"type": "function"
+						},
+						{
+							"inputs": [],
+							"name": "decrement",
+							"outputs": [],
+							"stateMutability": "nonpayable",
 							"type": "function"
 						},
 						{
@@ -112,12 +132,13 @@
 						"legacyAssembly": null,
 						"methodIdentifiers": {
 							"count()": "06661abd",
+							"decrement()": "2baeceb7",
 							"increment()": "d09de08a",
 							"incrementBy(uint256)": "03df179c",
 							"incrementBy10()": "f7164d75"
 						}
 					},
-					"metadata": "{\"compiler\":{\"version\":\"0.8.26+commit.8a97fa7a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"count\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"increment\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"incrementBy\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"incrementBy10\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/interfaces/ICounter.sol\":\"ICounter\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/interfaces/ICounter.sol\":{\"keccak256\":\"0x66a33543f4697c3b3e91eecd982c49a354a69d663be48e1bd74d54060e74e35b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://294faf1de1c052bfbcde81020d3ccda40995065f0382c086c2810fe582f9d0a0\",\"dweb:/ipfs/QmQ9zdzQqQtb4912XtRWZ5w1mVwpZzZRPx3ERHWETwNBBB\"]}},\"version\":1}",
+					"metadata": "{\"compiler\":{\"version\":\"0.8.26+commit.8a97fa7a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newAmount\",\"type\":\"uint256\"}],\"name\":\"IncrementedTo\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"count\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decrement\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"increment\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"incrementBy\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"incrementBy10\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/interfaces/ICounter.sol\":\"ICounter\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/interfaces/ICounter.sol\":{\"keccak256\":\"0x2ce85168bd8c295da666b385cffbed1db5e4b5115d848bf8c43fc6cf22a7c0ad\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d9a916e37a106123cbf8ead8e5bdd7b4ca1dc5180c92ae8bc42114d8a3be184e\",\"dweb:/ipfs/QmQPXLjYtszinjdnQKBTnSA4FwBSar1WArvXQVbUQrFsVK\"]}},\"version\":1}",
 					"storageLayout": {
 						"storage": [],
 						"types": null
@@ -136,10 +157,10 @@
 					"absolutePath": "contracts/interfaces/ICounter.sol",
 					"exportedSymbols": {
 						"ICounter": [
-							18
+							25
 						]
 					},
-					"id": 19,
+					"id": 26,
 					"license": "MIT",
 					"nodeType": "SourceUnit",
 					"nodes": [
@@ -161,9 +182,9 @@
 							"contractDependencies": [],
 							"contractKind": "interface",
 							"fullyImplemented": false,
-							"id": 18,
+							"id": 25,
 							"linearizedBaseContracts": [
-								18
+								25
 							],
 							"name": "ICounter",
 							"nameLocation": "70:8:0",
@@ -176,13 +197,13 @@
 									"kind": "function",
 									"modifiers": [],
 									"name": "count",
-									"nameLocation": "95:5:0",
+									"nameLocation": "112:5:0",
 									"nodeType": "FunctionDefinition",
 									"parameters": {
 										"id": 2,
 										"nodeType": "ParameterList",
 										"parameters": [],
-										"src": "100:2:0"
+										"src": "117:2:0"
 									},
 									"returnParameters": {
 										"id": 5,
@@ -196,7 +217,7 @@
 												"nameLocation": "-1:-1:-1",
 												"nodeType": "VariableDeclaration",
 												"scope": 6,
-												"src": "126:4:0",
+												"src": "143:4:0",
 												"stateVariable": false,
 												"storageLocation": "default",
 												"typeDescriptions": {
@@ -207,7 +228,7 @@
 													"id": 3,
 													"name": "uint",
 													"nodeType": "ElementaryTypeName",
-													"src": "126:4:0",
+													"src": "143:4:0",
 													"typeDescriptions": {
 														"typeIdentifier": "t_uint256",
 														"typeString": "uint256"
@@ -216,10 +237,10 @@
 												"visibility": "internal"
 											}
 										],
-										"src": "125:6:0"
+										"src": "142:6:0"
 									},
-									"scope": 18,
-									"src": "86:46:0",
+									"scope": 25,
+									"src": "103:46:0",
 									"stateMutability": "view",
 									"virtual": false,
 									"visibility": "external"
@@ -231,22 +252,22 @@
 									"kind": "function",
 									"modifiers": [],
 									"name": "increment",
-									"nameLocation": "147:9:0",
+									"nameLocation": "164:9:0",
 									"nodeType": "FunctionDefinition",
 									"parameters": {
 										"id": 7,
 										"nodeType": "ParameterList",
 										"parameters": [],
-										"src": "156:2:0"
+										"src": "173:2:0"
 									},
 									"returnParameters": {
 										"id": 8,
 										"nodeType": "ParameterList",
 										"parameters": [],
-										"src": "167:0:0"
+										"src": "184:0:0"
 									},
-									"scope": 18,
-									"src": "138:30:0",
+									"scope": 25,
+									"src": "155:30:0",
 									"stateMutability": "nonpayable",
 									"virtual": false,
 									"visibility": "external"
@@ -258,22 +279,22 @@
 									"kind": "function",
 									"modifiers": [],
 									"name": "incrementBy10",
-									"nameLocation": "183:13:0",
+									"nameLocation": "200:13:0",
 									"nodeType": "FunctionDefinition",
 									"parameters": {
 										"id": 10,
 										"nodeType": "ParameterList",
 										"parameters": [],
-										"src": "196:2:0"
+										"src": "213:2:0"
 									},
 									"returnParameters": {
 										"id": 11,
 										"nodeType": "ParameterList",
 										"parameters": [],
-										"src": "207:0:0"
+										"src": "224:0:0"
 									},
-									"scope": 18,
-									"src": "174:34:0",
+									"scope": 25,
+									"src": "191:34:0",
 									"stateMutability": "nonpayable",
 									"virtual": false,
 									"visibility": "external"
@@ -285,7 +306,7 @@
 									"kind": "function",
 									"modifiers": [],
 									"name": "incrementBy",
-									"nameLocation": "223:11:0",
+									"nameLocation": "240:11:0",
 									"nodeType": "FunctionDefinition",
 									"parameters": {
 										"id": 15,
@@ -296,10 +317,10 @@
 												"id": 14,
 												"mutability": "mutable",
 												"name": "_amount",
-												"nameLocation": "240:7:0",
+												"nameLocation": "257:7:0",
 												"nodeType": "VariableDeclaration",
 												"scope": 17,
-												"src": "235:12:0",
+												"src": "252:12:0",
 												"stateVariable": false,
 												"storageLocation": "default",
 												"typeDescriptions": {
@@ -310,7 +331,7 @@
 													"id": 13,
 													"name": "uint",
 													"nodeType": "ElementaryTypeName",
-													"src": "235:4:0",
+													"src": "252:4:0",
 													"typeDescriptions": {
 														"typeIdentifier": "t_uint256",
 														"typeString": "uint256"
@@ -319,28 +340,101 @@
 												"visibility": "internal"
 											}
 										],
-										"src": "234:14:0"
+										"src": "251:14:0"
 									},
 									"returnParameters": {
 										"id": 16,
 										"nodeType": "ParameterList",
 										"parameters": [],
-										"src": "257:0:0"
+										"src": "274:0:0"
 									},
-									"scope": 18,
-									"src": "214:44:0",
+									"scope": 25,
+									"src": "231:44:0",
 									"stateMutability": "nonpayable",
 									"virtual": false,
 									"visibility": "external"
+								},
+								{
+									"functionSelector": "2baeceb7",
+									"id": 20,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "decrement",
+									"nameLocation": "290:9:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 18,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "299:2:0"
+									},
+									"returnParameters": {
+										"id": 19,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "310:0:0"
+									},
+									"scope": 25,
+									"src": "281:30:0",
+									"stateMutability": "nonpayable",
+									"virtual": false,
+									"visibility": "external"
+								},
+								{
+									"anonymous": false,
+									"eventSelector": "ebe18b598c2c434933176ad2a694976edbe24fd661ff50685e80dbe82daa3537",
+									"id": 24,
+									"name": "IncrementedTo",
+									"nameLocation": "339:13:0",
+									"nodeType": "EventDefinition",
+									"parameters": {
+										"id": 23,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 22,
+												"indexed": false,
+												"mutability": "mutable",
+												"name": "newAmount",
+												"nameLocation": "358:9:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 24,
+												"src": "353:14:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 21,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "353:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "352:16:0"
+									},
+									"src": "333:36:0"
 								}
 							],
-							"scope": 19,
-							"src": "60:201:0",
+							"scope": 26,
+							"src": "60:312:0",
 							"usedErrors": [],
-							"usedEvents": []
+							"usedEvents": [
+								24
+							]
 						}
 					],
-					"src": "33:228:0"
+					"src": "33:339:0"
 				},
 				"id": 0
 			}

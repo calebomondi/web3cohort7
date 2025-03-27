@@ -4,20 +4,25 @@ pragma solidity ^0.8.26;
 import { ICounter } from './ICounter.sol';
 
 contract MyContract {
-    function incrementCounter(address _counter) external {
-        ICounter counter = ICounter(_counter);
-        counter.increment();
+    ICounter public  icounter;
+
+    constructor(ICounter _icounter) {
+        icounter = _icounter;
     }
 
-    function incrementCounterBy10(address _counter) external  {
-        ICounter(_counter).incrementBy10();
+    function incrementCounter() external {
+        icounter.increment();
     }
 
-    function incrementBy(address _counter, uint _amount) external  {
-        ICounter(_counter).incrementBy(_amount);
+    function incrementCounterBy10() external  {
+        icounter.incrementBy10();
     }
 
-    function getCount(address _counter) external view returns (uint256) {
-        return ICounter(_counter).count();
+    function incrementBy(uint _amount) external  {
+        icounter.incrementBy(_amount);
+    }
+
+    function getCount() external view returns (uint256) {
+        return icounter.count();
     }
 }

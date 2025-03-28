@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/calldata/calldata.sol": "Callata"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/calldata/calldata.sol": {
+			"keccak256": "0x8636672f4a239709b3ee5d3c815869493549e3327cece7a7ad2bcc349d8c5b2f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0e10b3e8b7404d862d252b252e46505976bada8a784e2ac244141aaf03d49623",
+				"dweb:/ipfs/QmdxNayoMbRPkmBbAo3UuTPRC6HVSWhNdoERhczYejM4M8"
+			]
+		}
+	},
+	"version": 1
+}

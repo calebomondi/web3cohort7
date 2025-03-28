@@ -1,0 +1,106 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "numbers",
+						"type": "uint256[]"
+					}
+				],
+				"name": "processNumbers",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "sum",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "avg",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "age",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CallData.Person",
+						"name": "person",
+						"type": "tuple"
+					}
+				],
+				"name": "processPersonData",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "isAdult",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/calldata/calldata.sol": "CallData"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/calldata/calldata.sol": {
+			"keccak256": "0xd252a8821409b808b8db6e43f21c0bb6c35c46fff4710f81f25d1d327ad72a86",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://95e426c82b4488b4df05977c92649446563ccdfea6833b670547c1c7fa32dfe8",
+				"dweb:/ipfs/QmXEU3kt9oysdqCVA8dHDnojHosYStndHHCoVfPLpUcCP8"
+			]
+		}
+	},
+	"version": 1
+}

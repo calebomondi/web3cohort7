@@ -1,0 +1,53 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/mappings/updateBalance.sol": "UpdateBalance"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/mappings/dataTypes.sol": {
+			"keccak256": "0x62a3aa47e8491d7f718a96b59976bfc6767682f206dd31085602b9debe39272d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://37a269b8baaaa2405fe936a702b3b278ef6740deac23d50a7ae3610c090defd0",
+				"dweb:/ipfs/QmQTvB6UMHFsoQUWi54GTNq1AZ3ytzQuB7AEREoetdvJPA"
+			]
+		},
+		"contracts/mappings/updateBalance.sol": {
+			"keccak256": "0xa54a1bf9b25d79b47d0eb28793b910d16ea76449fa59774bf53463db596171cd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://951ddf01b134515a8c0e742f36b54145f95d0b9baba756fc9bbf082d98e7d85a",
+				"dweb:/ipfs/QmP8UfA2Yn4iR1EcQog1XoSxuwbXBSJ9GXWjq4qNptpM3h"
+			]
+		}
+	},
+	"version": 1
+}

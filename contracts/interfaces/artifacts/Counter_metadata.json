@@ -6,6 +6,19 @@
 	"output": {
 		"abi": [
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "IncrementedTo",
+				"type": "event"
+			},
+			{
 				"inputs": [],
 				"name": "count",
 				"outputs": [
@@ -16,6 +29,13 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "decrement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -59,7 +79,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/interfaces/counterMain.sol": "Counter"
+			"contracts/interfaces/counterMainII.sol": "Counter"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -73,12 +93,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/interfaces/counterMain.sol": {
-			"keccak256": "0xb794963974e5066aa3c515c4ce2c1e0a418633ae7469f28b73c6c71cc97bfa33",
+		"contracts/interfaces/ICounter.sol": {
+			"keccak256": "0x2ce85168bd8c295da666b385cffbed1db5e4b5115d848bf8c43fc6cf22a7c0ad",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7aa6119c3ed47fcbb780dfc01ccb6b3aac90ca423bd078882066f98565c927b3",
-				"dweb:/ipfs/QmbnPzLredrX3YSHq4Wx2yYvsLBeVN5UHj28at4BWYiM32"
+				"bzz-raw://d9a916e37a106123cbf8ead8e5bdd7b4ca1dc5180c92ae8bc42114d8a3be184e",
+				"dweb:/ipfs/QmQPXLjYtszinjdnQKBTnSA4FwBSar1WArvXQVbUQrFsVK"
+			]
+		},
+		"contracts/interfaces/counterMainII.sol": {
+			"keccak256": "0x746d24bb69ad8ddbaae3dcd6bb8a45943cd2093a5e35b1447206bb6fb1c9c9fc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://10fd534f1fe19dd1240011bb25cd2a720aac8063a978d12233acfd2eeed20dc6",
+				"dweb:/ipfs/QmaYurjBvrTaRYCXNgaSJk58GKVthH7d1RFDbNPdmzocDB"
 			]
 		}
 	},

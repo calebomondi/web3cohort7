@@ -1,0 +1,903 @@
+{
+	"id": "10f6acfd53738d0b3919ac87c0d88f5e",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.26",
+	"solcLongVersion": "0.8.26+commit.8a97fa7a",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"contracts/structMapping/DataStorageLib.sol": {
+				"content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\nlibrary DataStorageLib {\r\n    struct balancesData {\r\n        mapping (address => uint) balances;\r\n    }\r\n\r\n    function setBalances (\r\n        balancesData storage _user, \r\n        address _owner, \r\n        uint256 _amount\r\n    ) internal {\r\n        _user.balances[_owner] = _amount;\r\n    }\r\n\r\n    function getBalances (\r\n        balancesData storage _user, \r\n        address _owner\r\n    ) internal view returns (uint)  {\r\n        return _user.balances[_owner];\r\n    }\r\n\r\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"contracts": {
+			"contracts/structMapping/DataStorageLib.sol": {
+				"DataStorageLib": {
+					"abi": [],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "    /* \"contracts/structMapping/DataStorageLib.sol\":60:533  library DataStorageLib {... */\n  dataSize(sub_0)\n  dataOffset(sub_0)\n  0x0b\n  dup3\n  dup3\n  dup3\n  codecopy\n  dup1\n  mload\n  0x00\n  byte\n  0x73\n  eq\n  tag_1\n  jumpi\n  mstore(0x00, 0x4e487b7100000000000000000000000000000000000000000000000000000000)\n  mstore(0x04, 0x00)\n  revert(0x00, 0x24)\ntag_1:\n  mstore(0x00, address)\n  0x73\n  dup2\n  mstore8\n  dup3\n  dup2\n  return\nstop\n\nsub_0: assembly {\n        /* \"contracts/structMapping/DataStorageLib.sol\":60:533  library DataStorageLib {... */\n      eq(address, deployTimeAddress())\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa264697066735822122096011f0b986a290c37c8f2634d517fae6a2fade6bc87217804addb634fdda6f264736f6c634300081a0033\n}\n",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "6055604b600b8282823980515f1a607314603f577f4e487b71000000000000000000000000000000000000000000000000000000005f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f80fdfea264697066735822122096011f0b986a290c37c8f2634d517fae6a2fade6bc87217804addb634fdda6f264736f6c634300081a0033",
+							"opcodes": "PUSH1 0x55 PUSH1 0x4B PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH0 BYTE PUSH1 0x73 EQ PUSH1 0x3F JUMPI PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH0 MSTORE PUSH0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH0 REVERT JUMPDEST ADDRESS PUSH0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP7 ADD 0x1F SIGNEXTEND SWAP9 PUSH11 0x290C37C8F2634D517FAE6A 0x2F 0xAD 0xE6 0xBC DUP8 0x21 PUSH25 0x4ADDB634FDDA6F264736F6C634300081A0033000000000000 ",
+							"sourceMap": "60:473:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "730000000000000000000000000000000000000000301460806040525f80fdfea264697066735822122096011f0b986a290c37c8f2634d517fae6a2fade6bc87217804addb634fdda6f264736f6c634300081a0033",
+							"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP7 ADD 0x1F SIGNEXTEND SWAP9 PUSH11 0x290C37C8F2634D517FAE6A 0x2F 0xAD 0xE6 0xBC DUP8 0x21 PUSH25 0x4ADDB634FDDA6F264736F6C634300081A0033000000000000 ",
+							"sourceMap": "60:473:0:-:0;;;;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "17000",
+								"executionCost": "92",
+								"totalCost": "17092"
+							},
+							"internal": {
+								"getBalances(struct DataStorageLib.balancesData storage pointer,address)": "infinite",
+								"setBalances(struct DataStorageLib.balancesData storage pointer,address,uint256)": "infinite"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "PUSH #[$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "PUSH [$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "PUSH",
+									"source": 0,
+									"value": "B"
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "CODECOPY",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "MLOAD",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "BYTE",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "PUSH",
+									"source": 0,
+									"value": "73"
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "EQ",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "PUSH [tag]",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "JUMPI",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "PUSH",
+									"source": 0,
+									"value": "4E487B7100000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "PUSH",
+									"source": 0,
+									"value": "4"
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "PUSH",
+									"source": 0,
+									"value": "24"
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "REVERT",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "tag",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "JUMPDEST",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "ADDRESS",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "PUSH",
+									"source": 0,
+									"value": "73"
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "DUP2",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "MSTORE8",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "DUP2",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 533,
+									"name": "RETURN",
+									"source": 0
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a264697066735822122096011f0b986a290c37c8f2634d517fae6a2fade6bc87217804addb634fdda6f264736f6c634300081a0033",
+									".code": [
+										{
+											"begin": 60,
+											"end": 533,
+											"name": "PUSHDEPLOYADDRESS",
+											"source": 0
+										},
+										{
+											"begin": 60,
+											"end": 533,
+											"name": "ADDRESS",
+											"source": 0
+										},
+										{
+											"begin": 60,
+											"end": 533,
+											"name": "EQ",
+											"source": 0
+										},
+										{
+											"begin": 60,
+											"end": 533,
+											"name": "PUSH",
+											"source": 0,
+											"value": "80"
+										},
+										{
+											"begin": 60,
+											"end": 533,
+											"name": "PUSH",
+											"source": 0,
+											"value": "40"
+										},
+										{
+											"begin": 60,
+											"end": 533,
+											"name": "MSTORE",
+											"source": 0
+										},
+										{
+											"begin": 60,
+											"end": 533,
+											"name": "PUSH",
+											"source": 0,
+											"value": "0"
+										},
+										{
+											"begin": 60,
+											"end": 533,
+											"name": "DUP1",
+											"source": 0
+										},
+										{
+											"begin": 60,
+											"end": 533,
+											"name": "REVERT",
+											"source": 0
+										}
+									]
+								}
+							},
+							"sourceList": [
+								"contracts/structMapping/DataStorageLib.sol",
+								"#utility.yul"
+							]
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.26+commit.8a97fa7a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/structMapping/DataStorageLib.sol\":\"DataStorageLib\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/structMapping/DataStorageLib.sol\":{\"keccak256\":\"0x24ea88126bb177d3b58e710240f1de9dfc8fdc84d1870e6562403accdb4cfc3b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b38b705202a4e1d68149cf923b8615088deffe027ff6116c22f62fafae0e8ca2\",\"dweb:/ipfs/QmPAyfRnj5oqw2Gk4B7Kh4fZX1qX8EN9FX7mixaJCqKusD\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"contracts/structMapping/DataStorageLib.sol": {
+				"ast": {
+					"absolutePath": "contracts/structMapping/DataStorageLib.sol",
+					"exportedSymbols": {
+						"DataStorageLib": [
+							42
+						]
+					},
+					"id": 43,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".0"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "33:23:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "DataStorageLib",
+							"contractDependencies": [],
+							"contractKind": "library",
+							"fullyImplemented": true,
+							"id": 42,
+							"linearizedBaseContracts": [
+								42
+							],
+							"name": "DataStorageLib",
+							"nameLocation": "68:14:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"canonicalName": "DataStorageLib.balancesData",
+									"id": 6,
+									"members": [
+										{
+											"constant": false,
+											"id": 5,
+											"mutability": "mutable",
+											"name": "balances",
+											"nameLocation": "147:8:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 6,
+											"src": "121:34:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+												"typeString": "mapping(address => uint256)"
+											},
+											"typeName": {
+												"id": 4,
+												"keyName": "",
+												"keyNameLocation": "-1:-1:-1",
+												"keyType": {
+													"id": 2,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "130:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"nodeType": "Mapping",
+												"src": "121:25:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+													"typeString": "mapping(address => uint256)"
+												},
+												"valueName": "",
+												"valueNameLocation": "-1:-1:-1",
+												"valueType": {
+													"id": 3,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "141:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												}
+											},
+											"visibility": "internal"
+										}
+									],
+									"name": "balancesData",
+									"nameLocation": "97:12:0",
+									"nodeType": "StructDefinition",
+									"scope": 42,
+									"src": "90:73:0",
+									"visibility": "public"
+								},
+								{
+									"body": {
+										"id": 24,
+										"nodeType": "Block",
+										"src": "299:51:0",
+										"statements": [
+											{
+												"expression": {
+													"id": 22,
+													"isConstant": false,
+													"isLValue": false,
+													"isPure": false,
+													"lValueRequested": false,
+													"leftHandSide": {
+														"baseExpression": {
+															"expression": {
+																"id": 16,
+																"name": "_user",
+																"nodeType": "Identifier",
+																"overloadedDeclarations": [],
+																"referencedDeclaration": 9,
+																"src": "310:5:0",
+																"typeDescriptions": {
+																	"typeIdentifier": "t_struct$_balancesData_$6_storage_ptr",
+																	"typeString": "struct DataStorageLib.balancesData storage pointer"
+																}
+															},
+															"id": 19,
+															"isConstant": false,
+															"isLValue": true,
+															"isPure": false,
+															"lValueRequested": false,
+															"memberLocation": "316:8:0",
+															"memberName": "balances",
+															"nodeType": "MemberAccess",
+															"referencedDeclaration": 5,
+															"src": "310:14:0",
+															"typeDescriptions": {
+																"typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+																"typeString": "mapping(address => uint256)"
+															}
+														},
+														"id": 20,
+														"indexExpression": {
+															"id": 18,
+															"name": "_owner",
+															"nodeType": "Identifier",
+															"overloadedDeclarations": [],
+															"referencedDeclaration": 11,
+															"src": "325:6:0",
+															"typeDescriptions": {
+																"typeIdentifier": "t_address",
+																"typeString": "address"
+															}
+														},
+														"isConstant": false,
+														"isLValue": true,
+														"isPure": false,
+														"lValueRequested": true,
+														"nodeType": "IndexAccess",
+														"src": "310:22:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_uint256",
+															"typeString": "uint256"
+														}
+													},
+													"nodeType": "Assignment",
+													"operator": "=",
+													"rightHandSide": {
+														"id": 21,
+														"name": "_amount",
+														"nodeType": "Identifier",
+														"overloadedDeclarations": [],
+														"referencedDeclaration": 13,
+														"src": "335:7:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_uint256",
+															"typeString": "uint256"
+														}
+													},
+													"src": "310:32:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"id": 23,
+												"nodeType": "ExpressionStatement",
+												"src": "310:32:0"
+											}
+										]
+									},
+									"id": 25,
+									"implemented": true,
+									"kind": "function",
+									"modifiers": [],
+									"name": "setBalances",
+									"nameLocation": "180:11:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 14,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 9,
+												"mutability": "mutable",
+												"name": "_user",
+												"nameLocation": "224:5:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 25,
+												"src": "203:26:0",
+												"stateVariable": false,
+												"storageLocation": "storage",
+												"typeDescriptions": {
+													"typeIdentifier": "t_struct$_balancesData_$6_storage_ptr",
+													"typeString": "struct DataStorageLib.balancesData"
+												},
+												"typeName": {
+													"id": 8,
+													"nodeType": "UserDefinedTypeName",
+													"pathNode": {
+														"id": 7,
+														"name": "balancesData",
+														"nameLocations": [
+															"203:12:0"
+														],
+														"nodeType": "IdentifierPath",
+														"referencedDeclaration": 6,
+														"src": "203:12:0"
+													},
+													"referencedDeclaration": 6,
+													"src": "203:12:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_struct$_balancesData_$6_storage_ptr",
+														"typeString": "struct DataStorageLib.balancesData"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 11,
+												"mutability": "mutable",
+												"name": "_owner",
+												"nameLocation": "249:6:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 25,
+												"src": "241:14:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 10,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "241:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 13,
+												"mutability": "mutable",
+												"name": "_amount",
+												"nameLocation": "275:7:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 25,
+												"src": "267:15:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 12,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "267:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "192:97:0"
+									},
+									"returnParameters": {
+										"id": 15,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "299:0:0"
+									},
+									"scope": 42,
+									"src": "171:179:0",
+									"stateMutability": "nonpayable",
+									"virtual": false,
+									"visibility": "internal"
+								},
+								{
+									"body": {
+										"id": 40,
+										"nodeType": "Block",
+										"src": "480:48:0",
+										"statements": [
+											{
+												"expression": {
+													"baseExpression": {
+														"expression": {
+															"id": 35,
+															"name": "_user",
+															"nodeType": "Identifier",
+															"overloadedDeclarations": [],
+															"referencedDeclaration": 28,
+															"src": "498:5:0",
+															"typeDescriptions": {
+																"typeIdentifier": "t_struct$_balancesData_$6_storage_ptr",
+																"typeString": "struct DataStorageLib.balancesData storage pointer"
+															}
+														},
+														"id": 36,
+														"isConstant": false,
+														"isLValue": true,
+														"isPure": false,
+														"lValueRequested": false,
+														"memberLocation": "504:8:0",
+														"memberName": "balances",
+														"nodeType": "MemberAccess",
+														"referencedDeclaration": 5,
+														"src": "498:14:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+															"typeString": "mapping(address => uint256)"
+														}
+													},
+													"id": 38,
+													"indexExpression": {
+														"id": 37,
+														"name": "_owner",
+														"nodeType": "Identifier",
+														"overloadedDeclarations": [],
+														"referencedDeclaration": 30,
+														"src": "513:6:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_address",
+															"typeString": "address"
+														}
+													},
+													"isConstant": false,
+													"isLValue": true,
+													"isPure": false,
+													"lValueRequested": false,
+													"nodeType": "IndexAccess",
+													"src": "498:22:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"functionReturnParameters": 34,
+												"id": 39,
+												"nodeType": "Return",
+												"src": "491:29:0"
+											}
+										]
+									},
+									"id": 41,
+									"implemented": true,
+									"kind": "function",
+									"modifiers": [],
+									"name": "getBalances",
+									"nameLocation": "367:11:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 31,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 28,
+												"mutability": "mutable",
+												"name": "_user",
+												"nameLocation": "411:5:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 41,
+												"src": "390:26:0",
+												"stateVariable": false,
+												"storageLocation": "storage",
+												"typeDescriptions": {
+													"typeIdentifier": "t_struct$_balancesData_$6_storage_ptr",
+													"typeString": "struct DataStorageLib.balancesData"
+												},
+												"typeName": {
+													"id": 27,
+													"nodeType": "UserDefinedTypeName",
+													"pathNode": {
+														"id": 26,
+														"name": "balancesData",
+														"nameLocations": [
+															"390:12:0"
+														],
+														"nodeType": "IdentifierPath",
+														"referencedDeclaration": 6,
+														"src": "390:12:0"
+													},
+													"referencedDeclaration": 6,
+													"src": "390:12:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_struct$_balancesData_$6_storage_ptr",
+														"typeString": "struct DataStorageLib.balancesData"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 30,
+												"mutability": "mutable",
+												"name": "_owner",
+												"nameLocation": "436:6:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 41,
+												"src": "428:14:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 29,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "428:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "379:70:0"
+									},
+									"returnParameters": {
+										"id": 34,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 33,
+												"mutability": "mutable",
+												"name": "",
+												"nameLocation": "-1:-1:-1",
+												"nodeType": "VariableDeclaration",
+												"scope": 41,
+												"src": "473:4:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 32,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "473:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "472:6:0"
+									},
+									"scope": 42,
+									"src": "358:170:0",
+									"stateMutability": "view",
+									"virtual": false,
+									"visibility": "internal"
+								}
+							],
+							"scope": 43,
+							"src": "60:473:0",
+							"usedErrors": [],
+							"usedEvents": []
+						}
+					],
+					"src": "33:500:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

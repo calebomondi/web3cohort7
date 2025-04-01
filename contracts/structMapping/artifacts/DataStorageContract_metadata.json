@@ -1,0 +1,80 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getUserBalances",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "setUserBalances",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/structMapping/DataStorageCon.sol": "DataStorageContract"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/structMapping/DataStorageCon.sol": {
+			"keccak256": "0x29d5473d2d193dc995531d398b9563a842840518534ee99cb8e4f689b89863b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c024e26b19f1c799335fa3dca504db19d70d4fb4ce783752e52473fdc62278d3",
+				"dweb:/ipfs/QmPcmBnQyNwtGR59pHRUeAfaibLgT91BDGrQwC8oEFMyeJ"
+			]
+		},
+		"contracts/structMapping/DataStorageLib.sol": {
+			"keccak256": "0x24ea88126bb177d3b58e710240f1de9dfc8fdc84d1870e6562403accdb4cfc3b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b38b705202a4e1d68149cf923b8615088deffe027ff6116c22f62fafae0e8ca2",
+				"dweb:/ipfs/QmPAyfRnj5oqw2Gk4B7Kh4fZX1qX8EN9FX7mixaJCqKusD"
+			]
+		}
+	},
+	"version": 1
+}

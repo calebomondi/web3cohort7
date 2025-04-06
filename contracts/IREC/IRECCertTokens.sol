@@ -30,7 +30,7 @@ contract IRECCertTokens is ERC20, Ownable, ERC20Permit, ERC721Holder {
     }
     
    /**
-    * @dev Mints tokens from the NFT
+    * @dev Mints tokens from the NFT holder
     */
    function mintTokensFromNFT() public onlyOwner {
         require(totalSupply() > 0, "Amount Must Be Greater Than 0!");

@@ -20,7 +20,7 @@ contract IRECCertNFT is ERC721, ERC721URIStorage, Ownable {
         _baseTokenURI = baseTokenURI;
     }
 
-    //mint tokens
+    //Mint tokens
     function safeMint(address to) public onlyOwner {
         uint256 tokenId = getTokenIdCount();
         increment();
@@ -28,11 +28,12 @@ contract IRECCertNFT is ERC721, ERC721URIStorage, Ownable {
         _setTokenURI(tokenId, _baseTokenURI);
     }
 
-    //increament and get tokenId count
+    //Icreament tokenId count
     function increment() internal {
         _tokenIdCounter += 1;
     }
 
+    //Get tokenId count
     function getTokenIdCount() public view returns(uint256) {
         return _tokenIdCounter;
     }

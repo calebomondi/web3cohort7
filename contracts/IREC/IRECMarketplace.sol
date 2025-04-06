@@ -21,10 +21,26 @@ contract IRECMarketplace is Ownable {
         address from;
         address to;
         uint256 amount;
+        uint32 timestampz;
     }
     mapping (string => Ownership[]) public ownerships;
+
+    //Active Token Listings
+    struct Listing {
+        address seller;
+        uint256 amount;
+        uint256 pricePerToken;
+        bool active;
+    }
     
-    event PurchasedFractionalTokens(uint256 indexed fractionTokenIndex, address sellerAddress, uint256 amountMinted);
+    mapping(string => mapping(uint => Listing)) public listings;
+
+
+    //track number of listings
+    uint public listingCount;
+    
+    event TokenPurchased(address indexed from, address indexed to,  uint256 amount, uint256 price);
+    event TokenListed(address indexed sellerAddress, uint256 amount, uint256 pricePerToken);
 
     constructor(
         IERC20 _fractionToken,  
@@ -34,9 +50,9 @@ contract IRECMarketplace is Ownable {
         nftContract = _nftContract;
     }
     
-    //get
+    //get ownership percentage by amount of tokens
     function getOwnershipPercentage(address owner) public view returns (uint256) {
-        return (fractionToken.balanceOf(owner) * 10000) / fractionToken.totalSupply();
+        return (fractionToken.balanceOf(owner) * 10000) / fractionToken.totalSupply(); //Multiplies % by 100
     }
 
     // Set up the initial sale
@@ -44,16 +60,84 @@ contract IRECMarketplace is Ownable {
         salePrice = _pricePerToken;
     }
 
+    //deposit tokens into contract address from the deployment address
+    function depositReserveTokens() external onlyOwner {
+        fractionToken.transferFrom(msg.sender, address(this), fractionToken.totalSupply());
+    }
+
     // Allow anyone to buy tokens directly
-    function purchaseTokens() external payable {
+    function purchaseFromReserve(uint16 _amount) external payable {
         require(saleActive, "Sale not active");
-        require(msg.value > 0, "Must send ETH");
+        require(msg.value > 0 && msg.value == salePrice * _amount, "Must send ETH");
         
         uint256 tokenAmount = msg.value / salePrice;
         require(tokenAmount > 0, "Not enough ETH sent");
+
+        ownerships['IREC'].push(Ownership({
+            from: address(this), 
+            to: msg.sender,  
+            amount: _amount,
+            timestampz: uint32(block.timestamp)
+        }));
         
         // Transfer tokens from contract's reserve to buyer
-        //fractionToken._transfer(owner(), msg.sender, tokenAmount);
+        fractionToken.transfer(msg.sender, tokenAmount);
+
+        emit TokenPurchased(address(this), msg.sender, _amount, salePrice);
     }
 
+    //token listing fro sale
+    function listToken(uint256 _amount, uint _price) external {
+        require(fractionToken.balanceOf(msg.sender) >= _amount, 'Insufficient Tokens To List!');
+
+        listingCount++;
+
+        //add listing
+        listings['IREC'][listingCount] = Listing({
+            seller: msg.sender, 
+            amount: _amount,
+            pricePerToken: _price, 
+            active: true
+        });
+
+        //tranfer tokens to contract
+        fractionToken.transferFrom(msg.sender, address(this), _amount);
+
+        emit TokenListed(msg.sender, _amount, _price);
+    }
+
+    //purchase tokens from listing
+    function purchaseFromListing(uint listingId) external payable  {
+        Listing memory listing = listings['IREC'][listingId];
+
+        require(listing.active, "Token not active");
+        require(msg.value >= listing.amount * listing.pricePerToken, "Insufficient ETH sent");
+
+        ownerships['IREC'].push(Ownership({
+            from: listing.seller, 
+            to: msg.sender, 
+            amount: listing.amount,
+            timestampz: uint32(block.timestamp)
+        }));
+
+        //transfer tokens from contract to buyer
+        fractionToken.transfer(msg.sender, listing.amount);
+
+        //pay seller
+        payable(listing.seller).transfer(msg.value);
+
+        listings['IREC'][listingId].active = false;
+
+        emit TokenPurchased(listing.seller, msg.sender, listing.amount, listing.pricePerToken);
+    }
+
+    //track ownerships
+    function getOwnershipTransfers() public view returns (Ownership[] memory) {
+        return  ownerships['IREC'];
+    }
+
+    //get current listing
+    function getTokenListing(uint listingId) public view returns(Listing memory) {
+        return listings['IREC'][listingId];
+    }
 }

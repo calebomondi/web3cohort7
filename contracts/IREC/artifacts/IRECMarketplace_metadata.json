@@ -44,6 +44,11 @@
 				"type": "error"
 			},
 			{
+				"inputs": [],
+				"name": "ReentrancyGuardReentrantCall",
+				"type": "error"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -465,6 +470,11 @@
 					{
 						"details": "The caller account is not authorized to perform an operation."
 					}
+				],
+				"ReentrancyGuardReentrantCall()": [
+					{
+						"details": "Unauthorized reentrant call."
+					}
 				]
 			},
 			"kind": "dev",
@@ -535,6 +545,14 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
+		"@openzeppelin/contracts/utils/ReentrancyGuard.sol": {
+			"keccak256": "0x11a5a79827df29e915a12740caf62fe21ebe27c08c9ae3e09abe9ee3ba3866d3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3cf0c69ab827e3251db9ee6a50647d62c90ba580a4d7bbff21f2bea39e7b2f4a",
+				"dweb:/ipfs/QmZiKwtKU1SBX4RGfQtY7PZfiapbbu6SZ9vizGQD9UHjRA"
+			]
+		},
 		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
 			"keccak256": "0x79796192ec90263f21b464d5bc90b777a525971d3de8232be80d9c4f9fb353b8",
 			"license": "MIT",
@@ -544,11 +562,11 @@
 			]
 		},
 		"contracts/IREC/IRECMarketplace.sol": {
-			"keccak256": "0x0e9c83d5afe32ced0294d6afc3b4fcb6be73840ea5277dec456b017c18777912",
+			"keccak256": "0xf079e2088a7f59602e0a96cbbfe5c2d33abbc539f5352483f16264ccc8c59192",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c678526257fa3e05447c5367d24d36410d06c11c1377fb20359b98e5c370a828",
-				"dweb:/ipfs/QmQP8mbhQZcbPwq7Eh8BpcaKPok5k8rde9rFbkKgTtK1ky"
+				"bzz-raw://ca607e51164f21aca44e1550fbeaf94697b3645bb20c11ecc4c886fb81e9ecab",
+				"dweb:/ipfs/QmPDv4aWT7ikfN2VQKmKwEmBhVx2oddeMEYJf2B826m1Ea"
 			]
 		}
 	},

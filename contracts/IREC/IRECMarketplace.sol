@@ -4,8 +4,9 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
-contract IRECMarketplace is Ownable {
+contract IRECMarketplace is Ownable, ReentrancyGuard {
     //initialize NFT and Token
     IERC20 public fractionToken;
     IERC721 public nftContract;
@@ -61,12 +62,12 @@ contract IRECMarketplace is Ownable {
     }
 
     //deposit tokens into contract address from the deployment address
-    function depositReserveTokens() external onlyOwner {
+    function depositReserveTokens() external nonReentrant onlyOwner {
         fractionToken.transferFrom(msg.sender, address(this), fractionToken.totalSupply());
     }
 
     // Allow anyone to buy tokens directly
-    function purchaseFromReserve(uint16 _amount) external payable {
+    function purchaseFromReserve(uint16 _amount) external payable nonReentrant {
         require(saleActive, "Sale not active");
         require(msg.value > 0 && msg.value == salePrice * _amount, "Must send ETH");
         
@@ -87,7 +88,7 @@ contract IRECMarketplace is Ownable {
     }
 
     //token listing fro sale
-    function listToken(uint256 _amount, uint _price) external {
+    function listToken(uint256 _amount, uint _price) external nonReentrant {
         require(fractionToken.balanceOf(msg.sender) >= _amount, 'Insufficient Tokens To List!');
 
         listingCount++;
@@ -107,7 +108,7 @@ contract IRECMarketplace is Ownable {
     }
 
     //purchase tokens from listing
-    function purchaseFromListing(uint listingId) external payable  {
+    function purchaseFromListing(uint listingId) external payable nonReentrant {
         Listing memory listing = listings['IREC'][listingId];
 
         require(listing.active, "Token not active");

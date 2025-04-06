@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/IREC/IRECMarketplace.sol": "IRECMarketplace"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/IREC/IRECMarketplace.sol": {
+			"keccak256": "0xe6cc8c11871eb302f6dcfade03a67cbb5abf3cbed7fa7eec20494684b563d83e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1cefd4e00be14c76c81c8aeb6d85f0d30a08fd05cde9a21933673a847d25a1e9",
+				"dweb:/ipfs/QmPf6hFByYP4e1KCXCGoa1duRWUYMUFfQSUpo6WuieJz8a"
+			]
+		}
+	},
+	"version": 1
+}
